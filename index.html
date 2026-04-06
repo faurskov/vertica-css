@@ -1,28 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./styles.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Css deep dive</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Deep Dive</title>
+    <link rel="stylesheet" href="./styles.css" />
     <style>
-        main{
-            min-height: 100vh;
-            display: grid;
-            place-content: center;
-        }
+      .page-hero {
+        text-align: center;
+        padding: var(--space-xl) var(--space-m);
+        border-bottom: 2px solid var(--color-gray-300);
+        margin-bottom: var(--space-xl);
+      }
+
+      .page-hero h1 {
+        font-size: var(--text-step-4);
+        margin-bottom: var(--space-s);
+      }
+
+      .page-hero p {
+        font-size: var(--text-step-1);
+        color: var(--color-gray-700);
+        margin: 0;
+      }
+
+      .section-title {
+        font-size: var(--text-step-2);
+        margin-bottom: var(--space-m);
+        padding-bottom: var(--space-2xs);
+        border-bottom: 2px solid var(--color-gray-300);
+      }
+
+      .nav-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: var(--space-m);
+        margin-bottom: var(--space-xl);
+      }
+
+      .nav-card {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2xs);
+        padding: var(--space-m);
+        background: var(--color-white);
+        border: 2px solid var(--color-gray-300);
+        border-radius: 0.75rem;
+        text-decoration: none;
+        color: inherit;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+      }
+
+      .nav-card:hover {
+        border-color: var(--color-primary);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        transform: translateY(-4px);
+      }
+
+      .nav-card .card-icon {
+        font-size: var(--text-step-2);
+        line-height: 1;
+      }
+
+      .nav-card h2 {
+        font-size: var(--text-step-1);
+        margin: 0;
+        color: var(--color-black);
+      }
+
+      .nav-card p {
+        font-size: var(--text-step--1);
+        color: var(--color-gray-700);
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      .page-footer {
+        text-align: center;
+        padding: var(--space-l) 0;
+        border-top: 2px solid var(--color-gray-300);
+        color: var(--color-gray-700);
+        font-size: var(--text-step--1);
+      }
     </style>
-</head>
-<body>
-    <main class="flow">
-        <h1>Css deep dive</h1>
-        <ul>
-            <li>Basic Css & modern Css-praksis</li>
-            <li>Scalable Css architechture</li>
-            <li>WORKSHOP</li>
-            <li>Afrunding + QA</li>
-        </ul>
-    </main>
-</body>
+  </head>
+  <body>
+    <div class="wrapper flow">
+      <header class="page-hero">
+        <h1>🎨 CSS Deep Dive</h1>
+        <p>A complete guide to modern CSS — from fundamentals to scalable architecture</p>
+      </header>
+
+      <main>
+        <section>
+          <h2 class="section-title">📚 Learn</h2>
+          <div class="nav-grid">
+            <a href="./basics/index.html" class="nav-card">
+              <span class="card-icon">🧱</span>
+              <h2>CSS Basics</h2>
+              <p>Selectors, specificity, box model, layout, positioning and more — 30+ interactive examples</p>
+            </a>
+            <a href="./layers-demo/index.html" class="nav-card">
+              <span class="card-icon">🗂️</span>
+              <h2>CSS Layers</h2>
+              <p>Cascade layers, scope and the modern hierarchy</p>
+            </a>
+            <a href="./kitchen-sink/index.html" class="nav-card">
+              <span class="card-icon">🍽️</span>
+              <h2>Kitchen Sink</h2>
+              <p>A full reference of all styled components and compositions in one place</p>
+            </a>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-title">🛠️ Demos</h2>
+          <div class="nav-grid">
+            <a href="./button-example/index.html" class="nav-card">
+              <span class="card-icon">🔘</span>
+              <h2>Button</h2>
+              <p>Scalable button component using CSS custom properties</p>
+            </a>
+            <a href="./cards/index.html" class="nav-card">
+              <span class="card-icon">🃏</span>
+              <h2>Cards</h2>
+              <p>Flexible card component with theming support</p>
+            </a>
+            <a href="./content-grid-example/index.html" class="nav-card">
+              <span class="card-icon">📐</span>
+              <h2>Content Grid</h2>
+              <p>Full-bleed content grid layout for long-form pages</p>
+            </a>
+            <a href="./mouse-trail-demo/index.html" class="nav-card">
+              <span class="card-icon">✨</span>
+              <h2>Mouse Trail</h2>
+              <p>CSS animation driven by JavaScript mouse position</p>
+            </a>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-title">✏️ Exercises</h2>
+          <div class="nav-grid">
+            <a href="./exercises/card/card.html" class="nav-card">
+              <span class="card-icon">🃏</span>
+              <h2>Card Exercise</h2>
+              <p>Build a responsive card component from a design mockup</p>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="page-footer">
+        <p>Ryan &amp; Arvind — Vertica CSS Workshop</p>
+      </footer>
+    </div>
+  </body>
 </html>
